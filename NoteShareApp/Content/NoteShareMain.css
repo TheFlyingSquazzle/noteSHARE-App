@@ -1,0 +1,149 @@
+﻿/*CSS for the Master Page (NoteShareMaster):*/
+body {
+    background-color: #d9d9d9;
+    font-family: 'Droid Sans', sans-serif;
+}
+
+h1 {
+    font-size: 48pt;
+    color: #7CCBF2;
+
+}
+
+header {
+    background-color: #FFFFFF;
+    width: 100%;
+    height: 5%;
+}
+
+#logo {
+    width: 20%;
+    height: 10%;
+    float: left;
+    margin-right: 15%;
+}
+
+#menu {
+    display: none;
+}
+
+
+/*CSS for the Dashboard Page:*/
+#dashLogo {
+    display: block;
+    height: 30%;
+    width: 30%;
+    margin: auto;
+    margin-top: 10%;
+}
+
+#accSettingLink {
+    display: block;
+    text-decoration: none;
+    color: #b3b3b3;
+    font-size: 12pt;
+    text-align: center;
+    width: 100%;
+}
+
+#boxes {
+    position: absolute;
+    justify-content: center;
+    width: 100%;
+    height: 35%;
+    border-bottom: 2px solid #b3b3b3;
+    margin-left: -2%;
+    
+
+
+}
+
+.box {
+    float: left;
+    width: 30%;
+    height: 30%;
+    background-color: #ffffff;
+    border: 2px solid #b3b3b3;
+    margin-top: 30%;
+    margin-right: .9%;
+    margin-left: 1.5%;
+    text-wrap: normal;
+}
+
+p {
+    font-size: 11pt;
+    text-align: center;
+    text-wrap: normal;
+    font-weight: bold;
+}
+
+.buttonText {
+    color: #7CCBF2;
+    text-align: center;
+    font-weight: bold;
+    font-size: 16pt;
+    vertical-align: middle;
+    padding:0px;
+    margin:0px;
+}
+
+#browseNotes {
+
+    margin-top: 80%;
+    width: 100%;
+    height: 20%;
+    background-color: #ffffff;
+    padding: 1em 1em 1em 1em;
+}
+
+#uploadNotes {
+    width: 100%;
+    height: 20%;
+    background-color: #ffffff;
+    padding: 1em 1em 1em 1em;
+    margin-top: 10%;
+}
+
+button {
+    text-decoration: none;
+    border: none;
+}
+
+button:after {
+    background-color: #7CCBF2;
+    color: #ffffff;
+}
+
+/*CSS for Log In Page:*/
+#header {
+    width: 100%;
+    height: 5%;
+    background-color: #ffffff;
+    padding:0px;
+    margin:0px;
+}
+h2 {
+    color: #525453;
+    font-size: 36pt;
+    padding: 1em 1em 0em 1em;
+    vertical-align: middle;
+    text-align: center;
+}
+img {
+    float: left;
+    margin-top: 10%;
+    width: 35%;
+    margin-left: 5%;   
+}
+#mainLabel {
+    font-size: 56pt;
+    margin-top: 35%;
+    vertical-align: middle;
+}
+#emailBox {
+    height: 78px;
+    background-color: #ffffff;
+}
+#Email_Login_Label {
+    float: left;
+}

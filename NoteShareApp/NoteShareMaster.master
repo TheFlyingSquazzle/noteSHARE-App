@@ -1,0 +1,40 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeFile="NoteShareMaster.master.cs" Inherits="NoteShareMaster" %>
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <meta name="viewport" content="width=device-width" />
+
+    <link rel="stylesheet" href="Content/NoteShareMain.css" />
+    <link rel="stylesheet" href="Content/SlickNav/dist/slicknav.css" />
+    <link href='https://fonts.googleapis.com/css?family=Droid+Sans' rel='stylesheet' type='text/css' />
+    <script src="Content/SlickNav/jquery.slicknav.js"></script>
+    <script src="http://cdnjs.cloudflare.com/ajax/libs/modernizr/2.6.2/modernizr.min.js"></script>
+    <title>noteSHARE</title>
+    <asp:ContentPlaceHolder id="head" runat="server">
+    </asp:ContentPlaceHolder>
+
+</head>
+<body>
+
+        <ul id="menu">
+	        <li><a class="scroll" href="Dashboard.aspx">Dashboard</a></li>
+	        <li><a class="scroll" href="#usage">Browse Notes</a></li>
+	        <li><a class="scroll" href="#examples">Upload Notes</a></li>
+	        <li><a class="scroll" href="#account">Account Settings</a></li>
+            <li><a class="scroll" href="#examples">Log Off</a></li>
+        </ul>
+
+    <asp:ContentPlaceHolder ID="MainContent" runat="server"></asp:ContentPlaceHolder>
+
+
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
+    <script src="Content/SlickNav/dist/jquery.slicknav.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function(){
+	        $('#menu').slicknav();
+        });
+    </script>
+</body>
+</html>

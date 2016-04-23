@@ -35,9 +35,11 @@ header {
     width: 30%;
     margin: auto;
     margin-top: 10%;
+    margin-left: 35%;
 }
 
 #accSettingLink {
+    clear: both;
     display: block;
     text-decoration: none;
     color: #b3b3b3;
@@ -53,9 +55,6 @@ header {
     height: 35%;
     border-bottom: 2px solid #b3b3b3;
     margin-left: -2%;
-    
-
-
 }
 
 .box {
@@ -66,7 +65,7 @@ header {
     border: 2px solid #b3b3b3;
     margin-top: 30%;
     margin-right: .9%;
-    margin-left: 1.5%;
+    margin-left: 1%;
     text-wrap: normal;
 }
 
@@ -101,7 +100,7 @@ p {
     height: 20%;
     background-color: #ffffff;
     padding: 1em 1em 1em 1em;
-    margin-top: 10%;
+    margin-top: 6%;
 }
 
 button {
@@ -112,6 +111,11 @@ button {
 button:after {
     background-color: #7CCBF2;
     color: #ffffff;
+}
+#DashboardForm {
+
+    margin-top: 80%;
+    width: 100%;
 }
 
 /*CSS for Log In Page:*/
@@ -124,7 +128,7 @@ button:after {
 }
 h2 {
     color: #525453;
-    font-size: 36pt;
+    font-size: 16pt;
     padding: 1em 1em 0em 1em;
     vertical-align: middle;
     text-align: center;
@@ -136,7 +140,7 @@ img {
     margin-left: 5%;   
 }
 #mainLabel {
-    font-size: 56pt;
+    font-size: 20pt;
     margin-top: 35%;
     vertical-align: middle;
 }

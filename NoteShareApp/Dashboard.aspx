@@ -4,7 +4,7 @@
 
     <img id="dashLogo" src="Images/noteLogo.png" />
      <!--Pull account name from database here... OR make a page that pulls all information needed from the database and store in application and seesion variables -->
-    <a id="accSettingLink" href="About.aspx">Accounts Settings</a>
+    <a id="accSettingLink" href="AccountSettings.aspx">Accounts Settings</a>
 
     <div id="boxes">
         <div class="box">
@@ -18,13 +18,13 @@
         </div>
     </div>
 
-    <button id="browseNotes">
-        <p class="buttonText">Browse Shared Notes</p>
-    </button>
+    <form id="DashboardForm" runat="server">
 
-    <button id="uploadNotes">
-        <p class="buttonText">Upload Notes</p>
-    </button>
+    <asp:Button ID="BrowseNotesButton" runat="server" Text="Browse Shared Notes" ForeColor="#7CCBF2" Font-Underline="False" BackColor="White" BorderStyle="None" Font-Bold="True" Font-Size="16pt" Width="100%" />
+    <br />
+    <br />
+    <asp:Button ID="UploadNotesButton" runat="server" Text="Upload Notes" ForeColor="#7CCBF2" BackColor="White" BorderStyle="None" Font-Bold="True" Width="100%" Visible="True" onclick="UploadNotesButton_Click" Font-Size="16pt" />
+    </form>
 
 </asp:Content>
 

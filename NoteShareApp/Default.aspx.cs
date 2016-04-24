@@ -19,4 +19,23 @@ public partial class LogIn : System.Web.UI.Page
     {
         Server.Transfer("CreateAccount.aspx");
     }
+
+    protected void LoginButton_Click(object sender, EventArgs e)
+    {
+        SqlDataReader reader = null;
+        SqlConnection conn = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=|DataDirectory|\noteSHAREdatabase.mdf;Integrated Security=True");
+        conn.Open();
+        SqlCommand cmd = new SqlCommand("select * from UserAccount where Email=@email and Password=@pass", conn);
+        cmd.Parameters.AddWithValue("@email", Email_Login_TextBox.Text);
+        cmd.Parameters.AddWithValue("@pass", Password_Login_TextBox.Text);
+        reader = cmd.ExecuteReader();
+        if (reader != null && reader.HasRows)
+        {
+            Application["Email"] = Email_Login_TextBox.Text;
+            Server.Transfer("Dashboard.aspx");
+        }
+
+
+
+    }
 }

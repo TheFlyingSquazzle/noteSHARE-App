@@ -3,9 +3,9 @@
 <asp:Content ID="DashboardContent" ContentPlaceHolderID="MainContent" Runat="Server">
 
     <img id="dashLogo" src="Images/noteLogo.png" />
-     <!--Pull account name from database here... OR make a page that pulls all information needed from the database and store in application and seesion variables -->
+    
     <a id="accSettingLink" href="AccountSettings.aspx">Accounts Settings</a>
-
+    
     <div id="boxes">
         <div class="box">
             <p>Notes Uploaded: </p>

@@ -13,12 +13,16 @@
         <form id="CreateAccForm" runat="server">
 
 
-            <asp:Label ID="NameLabel" runat="server" Text="Name:" Font-Size="16pt" EnableTheming="True"></asp:Label>
-            <asp:TextBox ID="NameTextBox" runat="server" Font-Size="16pt" Width="100%"></asp:TextBox>
+            <asp:Label ID="FirstNameLabel" runat="server" Text="First Name:" Font-Size="16pt" EnableTheming="True"></asp:Label>
+            <asp:TextBox ID="FirstNameTextBox" runat="server" Font-Size="16pt" Width="100%"></asp:TextBox>
+            <br />
+            <br />
+            <asp:Label ID="LastNameLabel" runat="server" Text="Last Name:" Font-Size="16pt" EnableTheming="True" ClientIDMode="Inherit"></asp:Label>
+            <asp:TextBox ID="LastNameTextBox" runat="server" Font-Size="16pt" Width="100%"></asp:TextBox>
             <br />
             <br />
             <asp:Label ID="EmailLabel" runat="server" Text="Email:" Font-Size="16pt"></asp:Label>
-            <asp:TextBox ID="EmailTextBox" runat="server" Font-Size="16pt" ValidateRequestMode="Inherit" Width="100%"></asp:TextBox>
+            <asp:TextBox ID="EmailTextBox" runat="server" Font-Size="16pt" Width="100%"></asp:TextBox>
             <br />
             <br />
             <asp:Label ID="PassLabel" runat="server" Text="Password:" Font-Size="16pt"></asp:Label>
@@ -31,7 +35,7 @@
             <br />
             <br />
             <br />
-            <asp:Button ID="CreateAccButton" runat="server" Text="Create Account" Width="100%" BackColor="White" BorderStyle="None" Font-Size="14pt" ForeColor="#7CCBF2" />
+            <asp:Button ID="CreateAccountButton" runat="server" Text="Create Account" Width="100%" BackColor="White" ForeColor="#7CCBF2" BorderStyle="None" Font-Bold="True" Font-Size="14pt" OnClick="CreateAccountButton_Click" />
         </form>
     </div>
 

@@ -31,15 +31,16 @@
                     <asp:TextBox ID="Email_Login_TextBox" runat="server" Font-Size="16pt" Width="100%"></asp:TextBox>
                 <br />
                     <asp:Label ID="Password_Login_Label" runat="server" Text="Password:" Font-Size="16pt"></asp:Label>
-                    <asp:TextBox ID="Password_Login_TextBox" runat="server" Font-Size="16pt" Width="100%"></asp:TextBox>
+                    <asp:TextBox ID="Password_Login_TextBox" runat="server" Font-Size="16pt" Width="100%" TextMode="Password"></asp:TextBox>
 
                 <br />
                 <br />
                 <br />
                 <br />
 
-                <asp:Button ID="LoginButton" runat="server" Text="Login" BackColor="White" Width="100%" Height="20%" BorderStyle="None" Font-Bold="True" Font-Size="14pt" ForeColor="#7CCBF2" />
-                <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:noteSHAREdb %>" SelectCommand="SELECT * FROM [UserAccount]"></asp:SqlDataSource>
+                <asp:Button ID="LoginButton" runat="server" Text="Login" BackColor="White" Width="100%" Height="20%" BorderStyle="None" Font-Bold="True" Font-Size="14pt" ForeColor="#7CCBF2" OnClick="LoginButton_Click" />
+                <asp:DataList ID="LoginDataList" runat="server" DataSourceID="LoginDataSource"></asp:DataList>
+                <asp:SqlDataSource ID="LoginDataSource" runat="server" ConnectionString="<%$ ConnectionStrings:noteSHAREdb %>" SelectCommand="SELECT * FROM [UserAccount]"></asp:SqlDataSource>
                 <br />
                 <br />
                 <asp:Button ID="CreateAccountButton" runat="server" Text="Create Account" Font-Size="14" BackColor="White" BorderStyle="None" Width="100%" Font-Bold="True" ForeColor="#7CCBF2" OnClick="CreateAccountButton_Click"/>

@@ -50,6 +50,7 @@ public partial class CreateAccount : System.Web.UI.Page
                 comm.Parameters.AddWithValue("@up", "0");
                 if (PassTextBox.Text == ConfPassTextBox.Text)
                 {
+                    Application["Email"] = EmailTextBox.Text;
                     conn.Open();
                     comm.ExecuteNonQuery();
                     Server.Transfer("Dashboard.aspx");

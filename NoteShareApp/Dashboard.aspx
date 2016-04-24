@@ -3,18 +3,24 @@
 <asp:Content ID="DashboardContent" ContentPlaceHolderID="MainContent" Runat="Server">
 
     <img id="dashLogo" src="Images/noteLogo.png" />
-    
+    <asp:Label ID="NameLabel" runat="server"></asp:Label>
     <a id="accSettingLink" href="AccountSettings.aspx">Accounts Settings</a>
     
     <div id="boxes">
         <div class="box">
-            <p>Notes Uploaded: </p>
+            <p>Notes Uploaded: <br />
+              <asp:Label ID="NotesUploadedLabel" runat="server"></asp:Label>
+            </p>
         </div>
         <div class="box">
-            <p>Notes Downloaded: </p>
+            <p>Notes Downloaded: <br />
+               <asp:Label ID="NotesDownloadedLabel" runat="server"></asp:Label>
+            </p>
         </div>
         <div class="box">
-            <p>SHAREpoints: </p>
+            <p>SHAREpoints: <br />
+             <asp:Label ID="SharePointsLabel" runat="server"></asp:Label>
+            </p>
         </div>
     </div>
 

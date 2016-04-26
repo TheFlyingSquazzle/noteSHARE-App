@@ -28,7 +28,7 @@
                 <br />
                 <br />
                     <asp:Label ID="Email_Login_Label" runat="server" Text="Email:" Font-Size="16pt" ></asp:Label>
-                    <asp:TextBox ID="Email_Login_TextBox" runat="server" Font-Size="16pt" Width="100%"></asp:TextBox>
+                    <asp:TextBox ID="Email_Login_TextBox" runat="server" Font-Size="16pt" Width="100%" TextMode="Email" PlaceHolder="example@okstate.edu"></asp:TextBox><asp:RegularExpressionValidator ID="EmailValidator" runat="server" ErrorMessage="Invalid Email" ControlToValidate="Email_Login_Textbox" ValidationExpression="^[a-z0-9](\.?[a-z0-9]){5,}@okstate\.edu$" ForeColor="Red"></asp:RegularExpressionValidator>
                 <br />
                     <asp:Label ID="Password_Login_Label" runat="server" Text="Password:" Font-Size="16pt"></asp:Label>
                     <asp:TextBox ID="Password_Login_TextBox" runat="server" Font-Size="16pt" Width="100%" TextMode="Password"></asp:TextBox>
@@ -39,8 +39,12 @@
                 <br />
 
                 <asp:Button ID="LoginButton" runat="server" Text="Login" BackColor="White" Width="100%" Height="20%" BorderStyle="None" Font-Bold="True" Font-Size="14pt" ForeColor="#7CCBF2" OnClick="LoginButton_Click" />
-                <asp:DataList ID="LoginDataList" runat="server" DataSourceID="LoginDataSource"></asp:DataList>
-                <asp:SqlDataSource ID="LoginDataSource" runat="server" ConnectionString="<%$ ConnectionStrings:noteSHAREdb %>" SelectCommand="SELECT * FROM [UserAccount]"></asp:SqlDataSource>
+                <asp:SqlDataSource ID="LoginDataSource" runat="server" ConnectionString="<%$ ConnectionStrings:noteSHAREdb %>" SelectCommand="SELECT * FROM [UserAccount] WHERE (([Email] = @Email) AND ([Password] = @Password))">
+                    <SelectParameters>
+                        <asp:ControlParameter ControlID="Email_Login_TextBox" Name="Email" PropertyName="Text" Type="String" />
+                        <asp:ControlParameter ControlID="Password_Login_TextBox" Name="Password" PropertyName="Text" Type="String" />
+                    </SelectParameters>
+                </asp:SqlDataSource>
                 <br />
                 <br />
                 <asp:Button ID="CreateAccountButton" runat="server" Text="Create Account" Font-Size="14" BackColor="White" BorderStyle="None" Width="100%" Font-Bold="True" ForeColor="#7CCBF2" OnClick="CreateAccountButton_Click"/>

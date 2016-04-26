@@ -26,16 +26,27 @@
             <br />
             <br />
             <asp:Label ID="PassLabel" runat="server" Text="Password:" Font-Size="16pt"></asp:Label>
-            <asp:TextBox ID="PassTextBox" runat="server" Width="100%" Font-Size="16pt"></asp:TextBox>
+            <asp:TextBox ID="PassTextBox" runat="server" Width="100%" Font-Size="16pt" TextMode="Password"></asp:TextBox>
             <br />
             <br />
             <asp:Label ID="ConfPassLabel" runat="server" Text="Confirm Password:" Font-Size="16pt"></asp:Label>
-            <asp:TextBox ID="ConfPassTextBox" runat="server" Font-Size="16pt" Width="100%"></asp:TextBox>
+            <asp:TextBox ID="ConfPassTextBox" runat="server" Font-Size="16pt" Width="100%" TextMode="Password"></asp:TextBox>
             <br />
             <br />
             <br />
             <br />
             <asp:Button ID="CreateAccountButton" runat="server" Text="Create Account" Width="100%" BackColor="White" ForeColor="#7CCBF2" BorderStyle="None" Font-Bold="True" Font-Size="14pt" OnClick="CreateAccountButton_Click" />
+            <asp:SqlDataSource ID="CreateAccountDataSource" runat="server" ConnectionString="<%$ ConnectionStrings:noteSHAREdb %>" InsertCommand="Insert into [UserAccount] (Password,Email,FirstName,LastName,SharePoints,Downloaded,Uploaded) values (@password, @email, @first, @last, @points, @down, @up)" SelectCommand="SELECT * FROM [UserAccount]">
+                <InsertParameters>
+                    <asp:ControlParameter ControlID="FirstNameTextBox" Name="first" PropertyName="Text" />
+                    <asp:ControlParameter ControlID="LastNameTextBox" Name="last" PropertyName="Text" />
+                    <asp:ControlParameter ControlID="EmailTextBox" Name="email" PropertyName="Text" />
+                    <asp:ControlParameter ControlID="PassTextBox" Name="password" PropertyName="Text" />
+                    <asp:Parameter DefaultValue="10" Name="points" />
+                    <asp:Parameter DefaultValue="0" Name="up" />
+                    <asp:Parameter DefaultValue="0" Name="down" />
+                </InsertParameters>
+            </asp:SqlDataSource>
         </form>
     </div>
 

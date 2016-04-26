@@ -18,8 +18,7 @@ public partial class Dashboard : System.Web.UI.Page
 
 
 
-        SqlDataReader reader = null;
-        SqlConnection conn = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=|DataDirectory|\noteSHAREdatabase.mdf;Integrated Security=True");
+        SqlConnection conn = new SqlConnection(@"Data Source=notesharedb.database.windows.net;Initial Catalog=noteSHAREdb;Integrated Security=False;User ID=CTaylor3819;Password=DBpassword1;Connect Timeout=60;Encrypt=False;TrustServerCertificate=False;ApplicationIntent=ReadWrite;MultiSubnetFailover=False");
         conn.Open();
         SqlCommand cmd = new SqlCommand("select Downloaded from UserAccount where Email=@email", conn);
         SqlCommand cmd1 = new SqlCommand("select Uploaded from UserAccount where Email=@email", conn);

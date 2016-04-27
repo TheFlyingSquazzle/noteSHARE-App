@@ -14,9 +14,8 @@
             <br />
             <br />
             <asp:Label ID="FileNameLabel" runat="server" Text="File:" Font-Size="12pt"></asp:Label>
-            <asp:TextBox ID="FileName" runat="server" Width="100%" Font-Size="16pt"></asp:TextBox>
             <br />
-            <asp:Button ID="Browse" runat="server" Text="Browse" Font-Size="10pt" BackColor="White" Font-Bold="True" Width="30%" ForeColor="#7CCBF2" onclick="Browse_Click" BorderStyle="None" />
+            <asp:FileUpload ID="FileUploader" runat="server" BackColor="White" BorderStyle="None" ForeColor="#7CCBF2" />
             <br />
             <br />
             <br />

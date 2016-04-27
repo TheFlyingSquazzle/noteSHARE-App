@@ -22,7 +22,10 @@ public partial class LogIn : System.Web.UI.Page
 
     protected void LoginButton_Click(object sender, EventArgs e)
     {
-        LoginDataSource.Select(DataSourceSelectArguments.Empty);
-        Server.Transfer("Dashboard.aspx");
+        if (LoginDataSource.Select(DataSourceSelectArguments.Empty) != null)
+        {
+            Application["Email"] = Email_Login_TextBox.Text;
+            Server.Transfer("Dashboard.aspx");
+        }
     }
 }

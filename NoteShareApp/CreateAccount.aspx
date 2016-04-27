@@ -14,23 +14,23 @@
 
 
             <asp:Label ID="FirstNameLabel" runat="server" Text="First Name:" Font-Size="16pt" EnableTheming="True"></asp:Label>
-            <asp:TextBox ID="FirstNameTextBox" runat="server" Font-Size="16pt" Width="100%"></asp:TextBox>
+            <asp:TextBox ID="FirstNameTextBox" runat="server" Font-Size="16pt" Width="100%"></asp:TextBox><asp:RequiredFieldValidator ID="FirstNameValidator" runat="server" ErrorMessage="Enter First Name" ControlToValidate="FirstNameTextBox"></asp:RequiredFieldValidator>
             <br />
             <br />
             <asp:Label ID="LastNameLabel" runat="server" Text="Last Name:" Font-Size="16pt" EnableTheming="True" ClientIDMode="Inherit"></asp:Label>
-            <asp:TextBox ID="LastNameTextBox" runat="server" Font-Size="16pt" Width="100%"></asp:TextBox>
+            <asp:TextBox ID="LastNameTextBox" runat="server" Font-Size="16pt" Width="100%"></asp:TextBox><asp:RequiredFieldValidator ID="LastNameValidator" runat="server" ErrorMessage="Enter Last Name" ControlToValidate="LastNameTextBox"></asp:RequiredFieldValidator>
             <br />
             <br />
             <asp:Label ID="EmailLabel" runat="server" Text="Email:" Font-Size="16pt"></asp:Label>
-            <asp:TextBox ID="EmailTextBox" runat="server" Font-Size="16pt" Width="100%"></asp:TextBox>
+            <asp:TextBox ID="EmailTextBox" runat="server" Font-Size="16pt" Width="100%"></asp:TextBox><asp:RegularExpressionValidator ID="EmailValidator" runat="server" ErrorMessage="Invalid Email" ValidationExpression="^[a-z0-9](\.?[a-z0-9]){5,}@okstate\.edu$" ControlToValidate="EmailTextBox"></asp:RegularExpressionValidator>
             <br />
             <br />
             <asp:Label ID="PassLabel" runat="server" Text="Password:" Font-Size="16pt"></asp:Label>
-            <asp:TextBox ID="PassTextBox" runat="server" Width="100%" Font-Size="16pt" TextMode="Password"></asp:TextBox>
+            <asp:TextBox ID="PassTextBox" runat="server" Width="100%" Font-Size="16pt" TextMode="Password"></asp:TextBox><asp:RequiredFieldValidator ID="PassValidator" runat="server" ErrorMessage="Enter a Password" ControlToValidate="PassTextBox"></asp:RequiredFieldValidator>
             <br />
             <br />
             <asp:Label ID="ConfPassLabel" runat="server" Text="Confirm Password:" Font-Size="16pt"></asp:Label>
-            <asp:TextBox ID="ConfPassTextBox" runat="server" Font-Size="16pt" Width="100%" TextMode="Password"></asp:TextBox>
+            <asp:TextBox ID="ConfPassTextBox" runat="server" Font-Size="16pt" Width="100%" TextMode="Password"></asp:TextBox><asp:RequiredFieldValidator ID="ConfPassValidator" runat="server" ErrorMessage="Enter Password Again" ControlToValidate="ConfPassTextBox"></asp:RequiredFieldValidator>
             <br />
             <br />
             <br />

@@ -30,6 +30,7 @@
     <br />
     <br />
     <asp:Button ID="UploadNotesButton" runat="server" Text="Upload Notes" ForeColor="#7CCBF2" BackColor="White" BorderStyle="None" Font-Bold="True" Width="100%" Visible="True" onclick="UploadNotesButton_Click" Font-Size="16pt" />
+    <asp:SqlDataSource ID="GetUseridDataSource" runat="server"></asp:SqlDataSource>
     </form>
 
 </asp:Content>

@@ -41,6 +41,7 @@ public partial class Dashboard : System.Web.UI.Page
 
     protected void UploadNotesButton_Click(object sender, EventArgs e)
     {
-        Server.Transfer("UploadNotes.aspx");
+        Application["UserID"] = GetUseridDataSource.Select(DataSourceSelectArguments.Empty);
+        Server.Transfer("Subject.aspx");
     }
 }

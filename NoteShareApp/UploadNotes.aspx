@@ -22,7 +22,7 @@
             <br />
             <br />
             <br />
-            <asp:Button ID="UploadButton" runat="server" Text="Upload File" ForeColor="#7CCBF2" Font-Size="16pt" BorderStyle="None" BackColor="White" Width="100%" UseSubmitBehavior="True" Font-Bold="True" />
+            <asp:Button ID="UploadButton" runat="server" Text="Upload File" ForeColor="#7CCBF2" Font-Size="16pt" BorderStyle="None" BackColor="White" Width="100%" UseSubmitBehavior="True" Font-Bold="True" OnClick="UploadButton_Click" />
 
         </form>
     </div>

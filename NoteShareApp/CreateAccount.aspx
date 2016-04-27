@@ -1,6 +1,7 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/NoteShareMaster.master" AutoEventWireup="true" CodeFile="CreateAccount.aspx.cs" Inherits="CreateAccount" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" Runat="Server">
+    <script src="https://www.google.com/recaptcha/api.js" async defer></script>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="MainContent" Runat="Server">
     <div data-role="main" class="ui-content">
@@ -48,6 +49,7 @@
                 </InsertParameters>
             </asp:SqlDataSource>
         </form>
+
     </div>
 
 

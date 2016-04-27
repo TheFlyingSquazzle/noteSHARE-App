@@ -12,4 +12,9 @@ public partial class UploadNotes : System.Web.UI.Page
     {
 
     }
+
+    protected void UploadButton_Click(object sender, EventArgs e)
+    {
+
+    }
 }

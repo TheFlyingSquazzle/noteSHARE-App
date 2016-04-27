@@ -1,41 +1,58 @@
-﻿<%@ Page Title="Home Page" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeFile="Default.aspx.cs" Inherits="_Default" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeFile="Default.aspx.cs" Inherits="LogIn" %>
 
-<asp:Content ID="BodyContent" ContentPlaceHolderID="MainContent" runat="server">
+<!DOCTYPE html>
 
-    <div class="jumbotron">
-        <h1>ASP.NET</h1>
-        <p class="lead">ASP.NET is a free web framework for building great Web sites and Web applications using HTML, CSS, and JavaScript.</p>
-        <p><a href="http://www.asp.net" class="btn btn-primary btn-lg">Learn more &raquo;</a></p>
-    </div>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <title>Log In</title>
+    <link rel="stylesheet" href="Content/NoteShareMain.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css" />
+    <script src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
+    <link href='https://fonts.googleapis.com/css?family=Droid+Sans' rel='stylesheet' type='text/css' />
+</head>
 
-    <div class="row">
-        <div class="col-md-4">
-            <h2>Getting started</h2>
-            <p>
-                ASP.NET Web Forms lets you build dynamic websites using a familiar drag-and-drop, event-driven model.
-            A design surface and hundreds of controls and components let you rapidly build sophisticated, powerful UI-driven sites with data access.
-            </p>
-            <p>
-                <a class="btn btn-default" href="http://go.microsoft.com/fwlink/?LinkId=301948">Learn more &raquo;</a>
-            </p>
+<body>
+    <div data-role="page">
+            <div id="header" data-role="header">
+                <h2>Log In</h2>
+            </div>
+
+            <div data-role="main" class="ui-content">
+
+                <img src="Images/noteLogo.png" />
+                <h1 id="mainLabel">noteSHARE</h1>
+
+
+            <form id="LogInForm" runat="server">
+                <br />
+                <br />
+                    <asp:Label ID="Email_Login_Label" runat="server" Text="Email:" Font-Size="16pt" ></asp:Label>
+                    <asp:TextBox ID="Email_Login_TextBox" runat="server" Font-Size="16pt" Width="100%" TextMode="Email" PlaceHolder="example@okstate.edu"></asp:TextBox><asp:RegularExpressionValidator ID="EmailValidator" runat="server" ErrorMessage="Invalid Email" ControlToValidate="Email_Login_Textbox" ValidationExpression="^[a-z0-9](\.?[a-z0-9]){5,}@okstate\.edu$" ForeColor="Red"></asp:RegularExpressionValidator>
+                <br />
+                    <asp:Label ID="Password_Login_Label" runat="server" Text="Password:" Font-Size="16pt"></asp:Label>
+                    <asp:TextBox ID="Password_Login_TextBox" runat="server" Font-Size="16pt" Width="100%" TextMode="Password"></asp:TextBox>
+
+                <br />
+                <br />
+                <br />
+                <br />
+
+                <asp:Button ID="LoginButton" runat="server" Text="Login" BackColor="White" Width="100%" Height="20%" BorderStyle="None" Font-Bold="True" Font-Size="14pt" ForeColor="#7CCBF2" OnClick="LoginButton_Click" />
+                <asp:SqlDataSource ID="LoginDataSource" runat="server" ConnectionString="<%$ ConnectionStrings:noteSHAREdb %>" SelectCommand="SELECT * FROM [UserAccount] WHERE (([Email] = @Email) AND ([Password] = @Password))">
+                    <SelectParameters>
+                        <asp:ControlParameter ControlID="Email_Login_TextBox" Name="Email" PropertyName="Text" Type="String" />
+                        <asp:ControlParameter ControlID="Password_Login_TextBox" Name="Password" PropertyName="Text" Type="String" />
+                    </SelectParameters>
+                </asp:SqlDataSource>
+                <br />
+                <br />
+                <asp:Button ID="CreateAccountButton" runat="server" Text="Create Account" Font-Size="14" BackColor="White" BorderStyle="None" Width="100%" Font-Bold="True" ForeColor="#7CCBF2" OnClick="CreateAccountButton_Click"/>
+            </form>
+
+            </div>
+
         </div>
-        <div class="col-md-4">
-            <h2>Get more libraries</h2>
-            <p>
-                NuGet is a free Visual Studio extension that makes it easy to add, remove, and update libraries and tools in Visual Studio projects.
-            </p>
-            <p>
-                <a class="btn btn-default" href="http://go.microsoft.com/fwlink/?LinkId=301949">Learn more &raquo;</a>
-            </p>
-        </div>
-        <div class="col-md-4">
-            <h2>Web Hosting</h2>
-            <p>
-                You can easily find a web hosting company that offers the right mix of features and price for your applications.
-            </p>
-            <p>
-                <a class="btn btn-default" href="http://go.microsoft.com/fwlink/?LinkId=301950">Learn more &raquo;</a>
-            </p>
-        </div>
-    </div>
-</asp:Content>
+
+</body>
+</html>

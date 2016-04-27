@@ -11,30 +11,41 @@
     <link href='https://fonts.googleapis.com/css?family=Droid+Sans' rel='stylesheet' type='text/css' />
     <script src="Content/SlickNav/jquery.slicknav.js"></script>
     <script src="http://cdnjs.cloudflare.com/ajax/libs/modernizr/2.6.2/modernizr.min.js"></script>
+    
+    <!-- Include meta tag to ensure proper rendering and touch zooming -->
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <!-- Include jQuery Mobile stylesheets -->
+    <link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css" />
+
+    <!-- Include the jQuery Mobile library -->
+    <script src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
     <title>noteSHARE</title>
     <asp:ContentPlaceHolder id="head" runat="server">
     </asp:ContentPlaceHolder>
 
 </head>
 <body>
+    <div data-role="page">
 
         <ul id="menu">
 	        <li><a class="scroll" href="Dashboard.aspx">Dashboard</a></li>
 	        <li><a class="scroll" href="#usage">Browse Notes</a></li>
-	        <li><a class="scroll" href="#examples">Upload Notes</a></li>
-	        <li><a class="scroll" href="#account">Account Settings</a></li>
-            <li><a class="scroll" href="#examples">Log Off</a></li>
+	        <li><a class="scroll" href="Subject.aspx">Upload Notes</a></li>
+	        <li><a class="scroll" href="AccountSettings.aspx">Account Settings</a></li>
+            <li><a class="scroll" href="Default.aspx">Log Off</a></li>
         </ul>
 
-    <asp:ContentPlaceHolder ID="MainContent" runat="server"></asp:ContentPlaceHolder>
+        <asp:ContentPlaceHolder ID="MainContent" runat="server"></asp:ContentPlaceHolder>
 
 
-    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
-    <script src="Content/SlickNav/dist/jquery.slicknav.js"></script>
-    <script type="text/javascript">
-        $(document).ready(function(){
-	        $('#menu').slicknav();
-        });
-    </script>
+        <script src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
+        <script src="Content/SlickNav/dist/jquery.slicknav.js"></script>
+        <script type="text/javascript">
+            $(document).ready(function(){
+	            $('#menu').slicknav();
+            });
+        </script>
+     </div>
 </body>
 </html>

@@ -25,12 +25,15 @@ public partial class Dashboard : System.Web.UI.Page
         SqlCommand cmd2 = new SqlCommand("select SharePoints from UserAccount where Email=@email", conn);
         SqlCommand cmd3 = new SqlCommand("select FirstName from UserAccount where Email=@email", conn);
         SqlCommand cmd4 = new SqlCommand("select LastName from UserAccount where Email=@email", conn);
+        SqlCommand cmd5 = new SqlCommand("select UserID from UserAccount where Email=@email", conn);
         cmd.Parameters.AddWithValue("@email", Application["Email"]);
         cmd1.Parameters.AddWithValue("@email", Application["Email"]);
         cmd2.Parameters.AddWithValue("@email", Application["Email"]);
         cmd3.Parameters.AddWithValue("@email", Application["Email"]);
         cmd4.Parameters.AddWithValue("@email", Application["Email"]);
+        cmd5.Parameters.AddWithValue("@email", Application["Email"]);
 
+        Application["UserID"] = (int)cmd5.ExecuteScalar();
         NotesUploadedLabel.Text = (String)cmd.ExecuteScalar().ToString();
         NotesDownloadedLabel.Text = (String)cmd1.ExecuteScalar().ToString();
         SharePointsLabel.Text = (String)cmd2.ExecuteScalar().ToString();
@@ -41,7 +44,11 @@ public partial class Dashboard : System.Web.UI.Page
 
     protected void UploadNotesButton_Click(object sender, EventArgs e)
     {
-        Application["UserID"] = GetUseridDataSource.Select(DataSourceSelectArguments.Empty);
         Server.Transfer("Subject.aspx");
+    }
+
+    protected void BrowseNotesButton_Click(object sender, EventArgs e)
+    {
+        Server.Transfer("BrowseNotes.aspx");
     }
 }

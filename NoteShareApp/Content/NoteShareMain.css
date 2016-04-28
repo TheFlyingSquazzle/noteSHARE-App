@@ -117,6 +117,13 @@ button:after {
     margin-top: 80%;
     width: 100%;
 }
+#label {
+    position: absolute;
+    justify-content: center;
+    width: 100%;
+    top:35%;
+    left: 37%;
+}
 
 /*CSS for Log In Page:*/
 #header {
@@ -150,4 +157,7 @@ img {
 }
 #Email_Login_Label {
     float: left;
+}
+#popup {
+    display: none;
 }

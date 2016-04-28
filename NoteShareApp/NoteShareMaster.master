@@ -11,8 +11,8 @@
     <link href='https://fonts.googleapis.com/css?family=Droid+Sans' rel='stylesheet' type='text/css' />
     <script src="Content/SlickNav/jquery.slicknav.js"></script>
     <script src="http://cdnjs.cloudflare.com/ajax/libs/modernizr/2.6.2/modernizr.min.js"></script>
-    <script src="https://www.google.com/recaptcha/api.js?onload=onloadCallback&render=explicit"
-        async defer>
+    <script src='https://www.google.com/recaptcha/api.js'></script>
+
 
 
     
@@ -34,7 +34,7 @@
 
         <ul id="menu">
 	        <li><a class="scroll" href="Dashboard.aspx">Dashboard</a></li>
-	        <li><a class="scroll" href="#usage">Browse Notes</a></li>
+	        <li><a class="scroll" href="BrowseNotes.aspx">Browse Notes</a></li>
 	        <li><a class="scroll" href="Subject.aspx">Upload Notes</a></li>
 	        <li><a class="scroll" href="AccountSettings.aspx">Account Settings</a></li>
             <li><a class="scroll" href="Default.aspx">Log Off</a></li>
@@ -44,6 +44,7 @@
 
 
         <script src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
+        <script src="Scripts/jquery.bpopup.js"></script>
         <script src="Content/SlickNav/dist/jquery.slicknav.js"></script>
         <script type="text/javascript">
             $(document).ready(function(){

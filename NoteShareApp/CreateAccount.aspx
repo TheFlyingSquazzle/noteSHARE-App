@@ -1,6 +1,7 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/NoteShareMaster.master" AutoEventWireup="true" CodeFile="CreateAccount.aspx.cs" Inherits="CreateAccount" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" Runat="Server">
+    <script src="https://www.google.com/recaptcha/api.js" async defer></script>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="MainContent" Runat="Server">
     <div data-role="main" class="ui-content">
@@ -10,7 +11,7 @@
                 <h2>Create Account</h2>
             </div>
 
-        <form id="CreateAccForm" runat="server">
+        <form id="CreateAccForm" data-ajax="False" runat="server">
 
 
             <asp:Label ID="FirstNameLabel" runat="server" Text="First Name:" Font-Size="16pt" EnableTheming="True"></asp:Label>
@@ -33,6 +34,7 @@
             <asp:TextBox ID="ConfPassTextBox" runat="server" Font-Size="16pt" Width="100%" TextMode="Password"></asp:TextBox><asp:RequiredFieldValidator ID="ConfPassValidator" runat="server" ErrorMessage="Enter Password Again" ControlToValidate="ConfPassTextBox"></asp:RequiredFieldValidator>
             <br />
             <br />
+            <div class="g-recaptcha" data-sitekey="6Lejax4TAAAAANSxDLdLoLtEJXSAEq0GkLMAwPfJ"></div>
             <br />
             <br />
             <asp:Button ID="CreateAccountButton" runat="server" Text="Create Account" Width="100%" BackColor="White" ForeColor="#7CCBF2" BorderStyle="None" Font-Bold="True" Font-Size="14pt" OnClick="CreateAccountButton_Click" />
@@ -48,6 +50,7 @@
                 </InsertParameters>
             </asp:SqlDataSource>
         </form>
+
     </div>
 
 

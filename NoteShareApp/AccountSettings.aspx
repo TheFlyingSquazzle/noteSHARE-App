@@ -10,7 +10,7 @@
                 <h2>Your Account</h2>
             </div>
              <div data-role="main" class="ui-content">
-                <form id="AccountForm" runat="server">
+                <form id="AccountForm" data-ajax="False" runat="server">
 
                     <asp:SqlDataSource ID="AccountSettingsDataSource" runat="server" DataSourceMode="DataReader" OnSelecting="AccountSettingsDataSource_Selecting" ConnectionString="<%$ ConnectionStrings:noteSHAREdb %>" SelectCommand="SELECT [FirstName], [LastName], [Email], [Password] FROM [UserAccount] WHERE ([Email] = ?)">
                         <SelectParameters>
@@ -41,12 +41,42 @@
                     <br />
                     <br />
                     <asp:Button ID="ChangePassButton" runat="server" Text="Change Password" Width="100%" BackColor="White" BorderStyle="None" Font-Size="16pt" ForeColor="#7CCBF2" OnClick="ChangePassButton_Click" />
-                    <asp:SqlDataSource ID="ChangePassDataSource" runat="server" ConnectionString="<%$ ConnectionStrings:noteSHAREdb %>" SelectCommand="SELECT Password FROM [UserAccount]" UpdateCommand="Update [UserAccount] set Password=@pass where Email=@email">
-                        <UpdateParameters>
-                            <asp:ControlParameter ControlID="PassTextBox" Name="pass" PropertyName="Text" />
+                    <asp:SqlDataSource ID="ChangePassDataSource" runat="server" ConnectionString="<%$ ConnectionStrings:noteSHAREdb %>" SelectCommand="SELECT * FROM [UserAccount] where Email=@email" UpdateCommand="UPDATE [UserAccount] SET Password = @Password where Email=@email" DeleteCommand="DELETE FROM [UserAccount] WHERE [UserID] = @UserID" InsertCommand="INSERT INTO [UserAccount] ([Password], [Email], [FirstName], [LastName], [SharePoints], [Downloaded], [Uploaded]) VALUES (@Password, @Email, @FirstName, @LastName, @SharePoints, @Downloaded, @Uploaded)">
+                        <DeleteParameters>
+                            <asp:Parameter Name="UserID" Type="Int32" />
+                        </DeleteParameters>
+                        <InsertParameters>
+                            <asp:Parameter Name="Password" Type="String" />
+                            <asp:Parameter Name="Email" Type="String" />
+                            <asp:Parameter Name="FirstName" Type="String" />
+                            <asp:Parameter Name="LastName" Type="String" />
+                            <asp:Parameter Name="SharePoints" Type="Int32" />
+                            <asp:Parameter Name="Downloaded" Type="Int32" />
+                            <asp:Parameter Name="Uploaded" Type="Int32" />
+                        </InsertParameters>
+                        <SelectParameters>
                             <asp:ControlParameter ControlID="EmailLabel" Name="email" PropertyName="Text" />
+                        </SelectParameters>
+                        <UpdateParameters>
+                            <asp:ControlParameter ControlID="PassTextBox" Name="Password" PropertyName="Text" Type="String" />
+                            <asp:ControlParameter ControlID="EmailLabel" Name="email" PropertyName="Text" Type="String"/>
                         </UpdateParameters>
                     </asp:SqlDataSource>
+                    <br />
+                    <br />
+                    <asp:Label ID="DeleteLabel" runat="server" Text="Delete your Account:"></asp:Label>
+                    <br />
+                    <asp:TextBox ID="DeleteTextBox" runat="server" BackColor="White" Width="100%" placeholder="Enter Email to Delete"></asp:TextBox>
+                    <br />
+                    <asp:Button ID="DeleteButton" runat="server" Text="Delete Account" Width="100%" BackColor="White" BorderStyle="None" Font-Size="16pt" ForeColor="#7CCBF2" OnClick="DeleteButton_Click" />
+                    <asp:SqlDataSource ID="DeleteDataSource" runat="server" ConnectionString="<%$ ConnectionStrings:noteSHAREdb %>" DeleteCommand="Delete from [UserAccount] where Email=@email" SelectCommand="SELECT * FROM [UserAccount]">
+                        <DeleteParameters>
+                            <asp:ControlParameter ControlID="DeleteTextBox" Name="email" PropertyName="Text" />
+                        </DeleteParameters>
+                    </asp:SqlDataSource>
+
+
+
                 </form>
              </div>
     </div>

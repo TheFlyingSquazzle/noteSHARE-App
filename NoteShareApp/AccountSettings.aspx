@@ -10,7 +10,7 @@
                 <h2>Your Account</h2>
             </div>
              <div data-role="main" class="ui-content">
-                <form id="AccountForm" data-ajax="False" runat="server">
+                <form id="AccountForm" runat="server">
 
                     <asp:SqlDataSource ID="AccountSettingsDataSource" runat="server" DataSourceMode="DataReader" OnSelecting="AccountSettingsDataSource_Selecting" ConnectionString="<%$ ConnectionStrings:noteSHAREdb %>" SelectCommand="SELECT [FirstName], [LastName], [Email], [Password] FROM [UserAccount] WHERE ([Email] = ?)">
                         <SelectParameters>

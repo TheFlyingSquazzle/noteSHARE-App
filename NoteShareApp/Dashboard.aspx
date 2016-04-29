@@ -26,7 +26,7 @@
         </div>
     </div>
 
-    <form id="DashboardForm" data-ajax="false" runat="server">
+    <form id="DashboardForm" runat="server">
 
     <asp:Button ID="BrowseNotesButton" runat="server" Text="Browse Shared Notes" ForeColor="#7CCBF2" Font-Underline="False" BackColor="White" BorderStyle="None" Font-Bold="True" Font-Size="16pt" Width="100%" onclick="BrowseNotesButton_Click"/>
     <br />

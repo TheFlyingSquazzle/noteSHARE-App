@@ -18,7 +18,7 @@ public partial class Subject : System.Web.UI.Page
     protected void NextButton_Click(object sender, EventArgs e)
     {
 
-        Application["Subject"] = DropDownList1.SelectedValue;
+        Application["Subject"] = DropDownList1.SelectedValue;  //Selected value of dropdown list is saved to app variable and sent to Upload Notes Page
 
         Server.Transfer("UploadNotes.aspx");
 

@@ -11,7 +11,7 @@
                 <h2>Create Account</h2>
             </div>
 
-        <form id="CreateAccForm" data-ajax="False" runat="server">
+        <form id="CreateAccForm" runat="server">
 
 
             <asp:Label ID="FirstNameLabel" runat="server" Text="First Name:" Font-Size="16pt" EnableTheming="True"></asp:Label>

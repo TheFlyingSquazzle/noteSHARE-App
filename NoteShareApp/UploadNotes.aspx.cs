@@ -29,7 +29,7 @@ public partial class UploadNotes : System.Web.UI.Page
             SqlConnection conn = new SqlConnection(@"Data Source=notesharedb.database.windows.net;Initial Catalog=noteSHAREdb;Integrated Security=False;User ID=CTaylor3819;Password=DBpassword1;Connect Timeout=60;Encrypt=False;TrustServerCertificate=False;ApplicationIntent=ReadWrite;MultiSubnetFailover=False");
             conn.Open();
             SqlCommand cmd = new SqlCommand("Insert into [Notes] (Title,Subjects,Price,UserID) values (@title,@subject,@price,@user)", conn);
-            SqlCommand cmd1 = new SqlCommand("Update [UserAccount] set SharePoints = SharePoints + 10, Uploaded = Uploaded + 1 where Email=@email", conn);
+            SqlCommand cmd1 = new SqlCommand("Update [UserAccount] set SharePoints = SharePoints + 10, Uploaded = Uploaded + 1 where Email=@email", conn); // Changes data for dashboard and user
 
             cmd.Parameters.AddWithValue("@title", FileUploader.FileName);
             cmd.Parameters.AddWithValue("@subject", Application["Subject"]);
@@ -40,7 +40,7 @@ public partial class UploadNotes : System.Web.UI.Page
             cmd.ExecuteScalar();
             cmd1.ExecuteScalar();
             
-            PopUpLabel.Text = FileUploader.FileName + " has been uploaded!";
+            PopUpLabel.Text = FileUploader.FileName + " has been uploaded!";  //Verify file was uploaded
 
         }
     }

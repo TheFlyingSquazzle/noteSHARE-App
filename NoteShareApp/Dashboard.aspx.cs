@@ -17,7 +17,7 @@ public partial class Dashboard : System.Web.UI.Page
        // NotesUploadedLabel.Text = drv["NotesUploaded"].ToString()
 
 
-
+        //SQL commands to handle selecting all the user data and providing data to dashboard page
         SqlConnection conn = new SqlConnection(@"Data Source=notesharedb.database.windows.net;Initial Catalog=noteSHAREdb;Integrated Security=False;User ID=CTaylor3819;Password=DBpassword1;Connect Timeout=60;Encrypt=False;TrustServerCertificate=False;ApplicationIntent=ReadWrite;MultiSubnetFailover=False");
         conn.Open();
         SqlCommand cmd = new SqlCommand("select Downloaded from UserAccount where Email=@email", conn);
@@ -44,11 +44,11 @@ public partial class Dashboard : System.Web.UI.Page
 
     protected void UploadNotesButton_Click(object sender, EventArgs e)
     {
-        Server.Transfer("Subject.aspx");
+        Server.Transfer("Subject.aspx"); //send to Upload Notes Page
     }
 
     protected void BrowseNotesButton_Click(object sender, EventArgs e)
     {
-        Server.Transfer("BrowseNotes.aspx");
+        Server.Transfer("BrowseNotes.aspx"); //Send to Browse Notes Page
     }
 }

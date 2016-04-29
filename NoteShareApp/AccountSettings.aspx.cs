@@ -42,8 +42,8 @@ public partial class AccountSettings : System.Web.UI.Page
 
     protected void ChangePassButton_Click(object sender, EventArgs e)
     {
-        ChangePassDataSource.Update();
-        PassLabel.Text = ChangePassDataSource.Select(DataSourceSelectArguments.Empty).ToString();
+       ChangePassDataSource.Update();
+       PassLabel.Text = ChangePassDataSource.Select(DataSourceSelectArguments.Empty).ToString();
     }
 
     protected void DeleteButton_Click(object sender, EventArgs e)

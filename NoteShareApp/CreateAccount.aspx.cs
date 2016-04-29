@@ -16,11 +16,11 @@ public partial class CreateAccount : System.Web.UI.Page
 
     protected void CreateAccountButton_Click(object sender, EventArgs e)
     {
-                if (PassTextBox.Text == ConfPassTextBox.Text)
+                if (PassTextBox.Text == ConfPassTextBox.Text)  //checks to ensure that the passwords are the same
                 {
                     Application["Email"] = EmailTextBox.Text;
-                     CreateAccountDataSource.Insert();
-                    Server.Transfer("Dashboard.aspx");
+                     CreateAccountDataSource.Insert(); //if passes are the same then create Email app var and create account
+                    Server.Transfer("Dashboard.aspx"); //send to Dashboard
                 }
     }
 }

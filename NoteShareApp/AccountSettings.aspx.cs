@@ -12,12 +12,15 @@ public partial class AccountSettings : System.Web.UI.Page
 {
     protected void Page_Load(object sender, EventArgs e)
     {
+        //SQL Connection and Commands
         SqlConnection conn = new SqlConnection(@"Data Source=notesharedb.database.windows.net;Initial Catalog=noteSHAREdb;Integrated Security=False;User ID=CTaylor3819;Password=DBpassword1;Connect Timeout=60;Encrypt=False;TrustServerCertificate=False;ApplicationIntent=ReadWrite;MultiSubnetFailover=False");
         conn.Open();
         SqlCommand cmd = new SqlCommand("select FirstName from UserAccount where Email=@email", conn);
         SqlCommand cmd1 = new SqlCommand("select LastName from UserAccount where Email=@email", conn);
         SqlCommand cmd2 = new SqlCommand("select Email from UserAccount where Email=@email", conn);
         SqlCommand cmd3 = new SqlCommand("select Password from UserAccount where Email=@email", conn);
+
+        //Add the parameter values
 
         cmd.Parameters.AddWithValue("@email", Application["Email"]);
         cmd1.Parameters.AddWithValue("@email", Application["Email"]);
@@ -28,6 +31,7 @@ public partial class AccountSettings : System.Web.UI.Page
         EmailLabel.Text = (String)cmd2.ExecuteScalar().ToString();
         PassLabel.Text = (String)cmd3.ExecuteScalar().ToString();
         PassTextBox.Text = (String)cmd3.ExecuteScalar().ToString();
+        //Executes commands to get values
 
     }
 

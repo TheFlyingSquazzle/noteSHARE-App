@@ -19,7 +19,7 @@
                 <h2>Upload Notes</h2>
             </div>
 
-        <form id="UploadForm" runat="server">
+        <form id="UploadForm" data-ajax="False" runat="server">
             <br />
             <br />
             <asp:Label ID="FileNameLabel" runat="server" Text="File:" Font-Size="12pt"></asp:Label>

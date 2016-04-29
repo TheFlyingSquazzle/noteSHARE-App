@@ -12,7 +12,7 @@
                 <h2>Select Subject</h2>
             </div>
 
-            <form id="UploadForm" runat="server">
+            <form id="UploadForm" data-ajax="False" runat="server">
                 <br />
                 <br />
                 <asp:DropDownList ID="DropDownList1" runat="server" BackColor="White" ForeColor="#7CCBF2" Width="100%" Font-Size="20pt">

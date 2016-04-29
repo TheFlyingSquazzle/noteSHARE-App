@@ -24,7 +24,7 @@
                 <h1 id="mainLabel">noteSHARE</h1>
 
 
-            <form id="LogInForm" runat="server">
+            <form id="LogInForm" data-ajax="False" runat="server">
                 <br />
                 <br />
                     <asp:Label ID="Email_Login_Label" runat="server" Text="Email:" Font-Size="16pt" ></asp:Label>

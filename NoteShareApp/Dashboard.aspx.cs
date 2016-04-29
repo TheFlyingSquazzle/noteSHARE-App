@@ -33,9 +33,9 @@ public partial class Dashboard : System.Web.UI.Page
         cmd4.Parameters.AddWithValue("@email", Application["Email"]);
         cmd5.Parameters.AddWithValue("@email", Application["Email"]);
 
-        Application["UserID"] = (int)cmd5.ExecuteScalar();
-        NotesUploadedLabel.Text = (String)cmd.ExecuteScalar().ToString();
-        NotesDownloadedLabel.Text = (String)cmd1.ExecuteScalar().ToString();
+        Session["UserID"] = (int)cmd5.ExecuteScalar();
+        NotesUploadedLabel.Text = (String)cmd1.ExecuteScalar().ToString();
+        NotesDownloadedLabel.Text = (String)cmd.ExecuteScalar().ToString();
         SharePointsLabel.Text = (String)cmd2.ExecuteScalar().ToString();
         NameLabel.Text = (String)cmd3.ExecuteScalar().ToString() + " " + (String)cmd4.ExecuteScalar().ToString();
 
